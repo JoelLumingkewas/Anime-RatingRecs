@@ -1,42 +1,91 @@
-#root {
-  max-width: 1280px;
+/* Reset the container */
+.container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20px;
+}
+
+/* Update anime grid */
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+  padding: 20px;
+}
+
+/* Style the anime cards */
+.anime-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.anime-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Image container */
+.anime-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+/* Text content */
+.anime-card h3 {
+  font-size: 1rem;
+  margin: 12px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.anime-card p {
+  font-size: 0.9rem;
+  margin: 0 12px 12px;
+  color: #666;
+}
+
+/* Loading and error states */
+.loading, .error {
   text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #666;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.error {
+  color: #ff4444;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Recommendations section */
+.recommendations {
+  margin-top: 40px;
+  padding: 24px;
+  background: #f8f9fa;
+  border-radius: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.recommendations h2 {
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.card {
-  padding: 2em;
+.recommendations-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
 }
 
-.read-the-docs {
-  color: #888;
+.recommendation-item {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
